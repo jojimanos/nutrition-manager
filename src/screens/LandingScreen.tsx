@@ -15,7 +15,7 @@ const LandingScreen: React.FC<LandingScreenProps> = () => {
     const [foodType, setFoodType] = useState("Survey (FNDDS)")
 
     async function getNutritionalValue(food: string) {
-        const response = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=ke6e49KSKCkDGkhzge2IVhwbptSepYI1IJsUzn1s&query=${food}&dataType=${foodType}`,
+        const response = await fetch(`https://api.nal.usda.gov/fdc/v1/foods/search?api_key=&query=${food}&dataType=${foodType}`,
         );
         const item = await response.json();
         setProtein(JSON.stringify(item.foods[0].foodNutrients[0].value))
